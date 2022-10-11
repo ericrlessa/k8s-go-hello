@@ -19,12 +19,6 @@ spec:
           image: ericlessa/hello-go:v4
           env:
             - name: NAME 
-              valueFrom: 
-                configMapKeyRef:
-                    name: goserver-env
-                    key: NAME
+              value: "Bob Marley"
             - name: AGE
-              valueFrom:
-                configMapKeyRef:
-                  name: goserver-env
-                  key: AGE
+              value: "30"
