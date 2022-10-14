@@ -20,22 +20,22 @@ spec:
 
           resources: 
             requests: #minimo para rodar -> reservando recursos do cluster para o POD
-              cpu: "0.3"
+              cpu: "0.05"
               memory: 20Mi
             limits:
-              cpu: "0.3"
+              cpu: "0.05"
               memory: 25Mi
 
           startupProbe:
             httpGet:
-              path: /readiness2
+              path: /readiness
               port: 8000
             periodSeconds: 3
             failureThreshold: 30
 
           livenessProbe:
             httpGet:
-              path: /readiness2
+              path: /readiness
               port: 8000
             periodSeconds: 5
             failureThreshold: 1
@@ -44,7 +44,7 @@ spec:
           
           readinessProbe:
             httpGet:
-              path: /readiness2
+              path: /readiness
               port: 8000
             periodSeconds: 3
             failureThreshold: 1
